@@ -3,6 +3,8 @@ import React from 'react'
 const NewsList = ({ news, loading, error }) => {
   return (
     <div className="bg-white  border-b-4 border-gray-800 w-1/2  mt-5 mb-5 lg:flex flex-wrap gap-2">
+        { loading && <p>Loading ...</p>}
+        { error && <p className='text-red-600'>error: {error}</p>}
         {news.map((article, index) => (
             <div key={index}>
                 <img src={article.urlToImage} alt={article.title} className="w-full object-cover h-32 sm:h-48 md:h-64"></img>
